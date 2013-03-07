@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:7864fae10fb3e359b0b8fe312fa4f1ae$ -->
+<TextureAtlas imagePath="floor@2x.png">
+    <SubTexture name="basic_floor_tile" x="1212" y="1072" width="600" height="314" frameX="0" frameY="-432" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="basic_floor_tile2" x="608" y="1072" width="600" height="314" frameX="0" frameY="-432" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="basic_floor_tile3" x="1212" y="754" width="600" height="314" frameX="0" frameY="-432" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="basic_floor_tile4" x="608" y="754" width="600" height="314" frameX="0" frameY="-432" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_floor_tile1" x="4" y="724" width="600" height="590" frameX="0" frameY="-156" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_floor_tile2" x="4" y="4" width="900" height="716" frameX="0" frameY="-30" frameWidth="900" frameHeight="745"/>
+    <SubTexture name="obstacle_floor_tile3" x="908" y="4" width="600" height="746" frameX="0" frameY="0" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_floor_tile4" x="4" y="1318" width="600" height="566" frameX="0" frameY="-180" frameWidth="600" frameHeight="745"/>
+</TextureAtlas>

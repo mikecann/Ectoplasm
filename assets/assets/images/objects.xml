@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:41fe57944b06d55c18f4d2c841367863$ -->
+<TextureAtlas imagePath="objects.png">
+    <SubTexture name="again_down" x="295" y="292" width="188" height="73" frameX="-1" frameY="-2" frameWidth="190" frameHeight="77"/>
+    <SubTexture name="again_up" x="295" y="138" width="190" height="77" frameX="0" frameY="0" frameWidth="190" frameHeight="77"/>
+    <SubTexture name="bg_tile_blood" x="118" y="138" width="114" height="768"/>
+    <SubTexture name="bg_tile_plain" x="2" y="138" width="114" height="768"/>
+    <SubTexture name="ectoplasm_stamp" x="2" y="2" width="463" height="134" frameX="0" frameY="0" frameWidth="463" frameHeight="137"/>
+    <SubTexture name="ghost_small_1" x="382" y="367" width="82" height="126" frameX="-2" frameY="-4" frameWidth="100" frameHeight="134"/>
+    <SubTexture name="ghost_small_2" x="295" y="367" width="85" height="127" frameX="0" frameY="-3" frameWidth="100" frameHeight="134"/>
+    <SubTexture name="ghost_small_3" x="382" y="495" width="82" height="121" frameX="-1" frameY="-4" frameWidth="100" frameHeight="134"/>
+    <SubTexture name="ghost_small_4" x="2" y="908" width="99" height="114" frameX="-1" frameY="-5" frameWidth="100" frameHeight="134"/>
+    <SubTexture name="ghost_small_5" x="382" y="495" width="82" height="121" frameX="-1" frameY="-4" frameWidth="100" frameHeight="134"/>
+    <SubTexture name="ghost_small_6" x="295" y="367" width="85" height="127" frameX="0" frameY="-3" frameWidth="100" frameHeight="134"/>
+    <SubTexture name="large_o" x="467" y="2" width="24" height="28" frameX="0" frameY="0" frameWidth="24" frameHeight="28"/>
+    <SubTexture name="small_o" x="493" y="2" width="14" height="15" frameX="0" frameY="0" frameWidth="14" frameHeight="15"/>
+    <SubTexture name="start_down" x="295" y="217" width="188" height="73" frameX="-1" frameY="-2" frameWidth="190" frameHeight="77"/>
+    <SubTexture name="start_up" x="103" y="908" width="190" height="77" frameX="0" frameY="0" frameWidth="190" frameHeight="77"/>
+</TextureAtlas>

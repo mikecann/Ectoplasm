@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Ectoplasm</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.adobe.flexbuilder.project.flexbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.adobe.flexbuilder.project.apollobuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.adobe.flexide.project.multiplatform.multiplatformasnature</nature>
+		<nature>com.adobe.flexide.project.multiplatform.multiplatformnature</nature>
+		<nature>com.adobe.flexbuilder.project.apollonature</nature>
+		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>[source path] Ash</name>
+			<type>2</type>
+			<locationURI>Ash</locationURI>
+		</link>
+		<link>
+			<name>[source path] Feathers</name>
+			<type>2</type>
+			<locationURI>Feathers</locationURI>
+		</link>
+		<link>
+			<name>[source path] Starling</name>
+			<type>2</type>
+			<locationURI>Starling</locationURI>
+		</link>
+		<link>
+			<name>[source path] SwiftSuspenders2</name>
+			<type>2</type>
+			<locationURI>SwiftSuspenders2</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>
