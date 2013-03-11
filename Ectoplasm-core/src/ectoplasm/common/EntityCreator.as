@@ -11,6 +11,7 @@ package ectoplasm.common
 	import ectoplasm.components.game.Display;
 	import ectoplasm.components.game.Game;
 	import ectoplasm.components.game.Ghost;
+	import ectoplasm.components.game.Microphone;
 	import ectoplasm.components.game.Obstacle;
 	import ectoplasm.components.game.Particle;
 	import ectoplasm.components.game.Position;
@@ -23,6 +24,7 @@ package ectoplasm.common
 	import ectoplasm.data.ObstacleTypeVO;
 	import ectoplasm.views.CountdownGameStartView;
 	import ectoplasm.views.GhostView;
+	import ectoplasm.views.MicrophoneButtonView;
 	import ectoplasm.views.ObstacleView;
 	import ectoplasm.views.PlayingGameView;
 	import ectoplasm.views.PostGameView;
@@ -62,7 +64,9 @@ package ectoplasm.common
 			var e : Entity = new Entity();
 			
 			var fsm : EntityStateMachine = new EntityStateMachine(e);			
-			e.add( new Game(fsm) );
+			e.add(new Game(fsm) );
+			e.add(new Microphone());
+			e.add(new MicrophoneButtonView(assetMan));
 			
 			fsm.createState(GameStates.COUNTDOWN)
 				.add(CountdownGameStartState)
@@ -91,7 +95,7 @@ package ectoplasm.common
 			var e : Entity = new Entity();
 			e.add( new Obstacle(type, north) );
 			e.add( new Position(x,y,1) );
-			e.add( new Display(new ObstacleView(assetMan,type),DisplayDepths.OBSTACLE) );
+			e.add( new Display(new ObstacleView(assetMan,type),DisplayDepths.OBSTACLE+Math.random()/2) );
 			engine.addEntity( e );
 			return e;
 		}
@@ -102,7 +106,7 @@ package ectoplasm.common
 				.add(new Ghost())
 				.add(new Position(x,y,1))
 				.add(new Velocity())
-				.add(new Display(new GhostView(assetMan),DisplayDepths.GHOST));
+				.add(new Display(new GhostView(assetMan,GhostView.SMALL),DisplayDepths.GHOST));
 			
 			engine.addEntity( e );			
 			return e;
@@ -135,7 +139,7 @@ package ectoplasm.common
 			var i : Image = new Image(assetMan.getTexture(textureName));
 			i.pivotX = i.width/2;
 			i.pivotY = i.height/2;
-			var d : Display = new Display(i,DisplayDepths.TRAIL);
+			var d : Display = new Display(i,DisplayDepths.TRAIL+Math.random()/2);
 			d.container.rotation = rotation;
 			e.add( d );
 			engine.addEntity( e );

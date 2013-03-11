@@ -1,39 +1,41 @@
 package ectoplasm.systems.game
 {
+	import flash.display.Bitmap;
 	import flash.display.BitmapData;
-	import flash.geom.Matrix;
+	import flash.filters.GlowFilter;
 	import flash.geom.Point;
 	
 	import ash.core.Engine;
 	import ash.core.NodeList;
 	import ash.core.System;
 	
-	import ectoplasm.common.Assets;
+	import ectoplasm.data.Assets;
 	import ectoplasm.components.game.Invulnerable;
 	import ectoplasm.nodes.game.CameraNode;
 	import ectoplasm.nodes.game.GameNode;
 	import ectoplasm.nodes.game.GhostCollisionNode;
-	import ectoplasm.nodes.game.GhostNode;
 	import ectoplasm.nodes.game.ObstacleNode;
 	import ectoplasm.nodes.states.PlayingGameNode;
 	import ectoplasm.views.GhostView;
 	
-	import starling.animation.Tween;
 	import starling.core.Starling;
+	import starling.utils.AssetManager;
 	
 	public class GhostCollisionSystem extends System
 	{		
 		[Inject] public var engine : Engine;
-		
-		// The ratio between the number of lives remaining and the amount the ghost should grow
-		// when it is hit (bigger number equals smaller ghost)
-		public static const LIVES_SCALE_FACTOR : Number = 5;
-		
+		[Inject] public var assets : AssetManager;
+						
 		private var obstacles : NodeList;
+		
+		//private var b1 : Bitmap = new Bitmap();
 		
 		override public function addToEngine( engine : Engine ) : void
 		{
 			obstacles = engine.getNodeList( ObstacleNode ) ;
+			
+			//b1.filters = [new GlowFilter(0xff0000)];
+			//Starling.current.nativeOverlay.addChild(b1);
 		}				
 		
 		override public function update( time : Number ) : void
@@ -51,29 +53,35 @@ package ectoplasm.systems.game
 				// The ghost flashes when invulnerable
 				ghost.display.container.alpha = 1;
 				
-				// Collision works on pixel-perfect BMD checking, so go grab the ghost (it can scale)
-				var ghostBMD : BitmapData = getGhostBMD(ghost,playing);					
+				// Collision works on pixel-perfect BMD checking, so go grab the ghost
+				var ghostView : GhostView = ghost.display.container.getChildAt(0) as GhostView;				
+				var ghostBMD : BitmapData = Assets.collisionData[ghostView.getCurrentTextureName()];
+				var gv : GhostView = ghost.display.container.getChildAt(0) as GhostView;
+				var p : Point = new Point(ghost.position.position.x-gv.pivotX,ghost.position.position.y-gv.pivotY);
 				
-				var p : Point = new Point();				
-				for( var node : ObstacleNode = obstacles.head; node; node = node.next )
+				/*b1.bitmapData = ghostBMD;
+				b1.x = p.x-cam.position.position.x;
+				b1.y = p.y-cam.position.position.y;*/
+				
+				for(var node : ObstacleNode = obstacles.head; node; node = node.next )
 				{				
 					// Test the ghost against this obstacle, ensuring they are in the correct space coords
-					var obstacleBMD : BitmapData = Assets.bmdCache[node.obstacle.type.name];					
-					var b : Boolean = ghostBMD.hitTest(ghost.position.position,250,obstacleBMD,node.position.position,250);
+					var obstacleBMD : BitmapData = Assets.collisionData[node.obstacle.type.name];
+					var b : Boolean = ghostBMD.hitTest(p,250,obstacleBMD,node.position.position,250);
 					
 					// There was a hit!
 					if(b)
 					{			
 						// What happens if we run out of lives is managed in another system
-						playing.state.lives--;					
+						playing.state.lives--;
+						
+						// Ghost gets larger as it looses lives
+						ghost.display.container.removeChild(ghostView);
+						if(playing.state.lives==2) ghost.display.container.addChild(new GhostView(assets,GhostView.MEDIUM));
+						else ghost.display.container.addChild(new GhostView(assets,GhostView.LARGE));
 						
 						// The ghost becomes invulnerable now for a period of time 
 						ghost.entity.add(new Invulnerable(3));
-						
-						// Temp! Scale up the ghost over a period of time
-						var t : Tween = new Tween(ghost.display.container,1,"easeOut");
-						t.scaleTo((3-playing.state.lives)/LIVES_SCALE_FACTOR+1);
-						Starling.juggler.add(t);						
 						
 						// There can only be one collision per frame
 						break;
@@ -90,35 +98,5 @@ package ectoplasm.systems.game
 				if(invul.timeRemaining<=0) ghost.entity.remove(Invulnerable);
 			}
 		}		
-		
-		// Because we simply scale the ghost up when it collides we need a way of getting a scaled
-		// version of the original BMD so we can perform accurace pixel-perfect collision checks
-		private function getGhostBMD(ghost:GhostCollisionNode, playing:PlayingGameNode) : BitmapData
-		{
-			var ghostView : GhostView = ghost.display.container.getChildAt(0) as GhostView;				
-			var ghostBMD : BitmapData = Assets.bmdCache[ghostView.getCurrentTextureName()];	
-			
-			// If we are bigger we need a bigger BMD
-			if(playing.state.lives!=3)
-			{
-				// Grab the current frame that is being displayed on screen
-				var id : String = ghostView.getCurrentTextureName()+"_"+playing.state.lives;
-				var biggerBMD : BitmapData = Assets.bmdCache[id];
-				if(!biggerBMD)
-				{
-					// Render a correctly scaled version
-					var scale : Number = (3-playing.state.lives)/LIVES_SCALE_FACTOR+1;
-					biggerBMD = new BitmapData(ghostBMD.width*scale,ghostBMD.height*scale, true, 0);					
-					var m : Matrix = new Matrix();
-					m.scale(scale,scale);					
-					biggerBMD.draw(ghostBMD,m);
-					
-					// Cache it for next time
-					Assets.bmdCache[id] = biggerBMD;					
-				}
-				ghostBMD = biggerBMD;
-			}		
-			return ghostBMD;
-		}
 	}
 }

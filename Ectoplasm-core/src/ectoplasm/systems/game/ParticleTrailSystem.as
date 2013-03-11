@@ -43,7 +43,7 @@ package ectoplasm.systems.game
 				var rot : Number = Math.atan2(ghost.velocity.velocity.y,ghost.velocity.velocity.x);				
 				var tex : String = currentTextureSize+"_o";
 				
-				creator.createTrailParticle(tex,ghost.position.position.x, ghost.position.position.y+ghost.display.container.height-50, rot);
+				creator.createTrailParticle(tex,ghost.position.position.x-30, ghost.position.position.y+70, rot); // +ghost.display.container.height-50
 				timeSinceLastParticle = 0;
 				
 				// Every now and then randomly change the size of the particle

@@ -6,7 +6,10 @@ package ectoplasm.systems.states
 	import ectoplasm.common.EntityCreator;
 	import ectoplasm.common.GameConfig;
 	import ectoplasm.common.GameStates;
+	import ectoplasm.common.Highscores;
+	import ectoplasm.components.game.Collideable;
 	import ectoplasm.components.game.Controllable;
+	import ectoplasm.components.game.Microphone;
 	import ectoplasm.nodes.game.GameNode;
 	import ectoplasm.nodes.game.GhostNode;
 	import ectoplasm.nodes.states.CountdownGameStartStateNode;
@@ -18,6 +21,7 @@ package ectoplasm.systems.states
 		[Inject] public var engine : Engine;
 		[Inject] public var config : GameConfig;
 		[Inject] public var creator : EntityCreator;
+		[Inject] public var scores : Highscores;
 
 		private var container:Sprite;
 		
@@ -29,6 +33,7 @@ package ectoplasm.systems.states
 		
 		private function  onNodeAdded(node:CountdownGameStartStateNode) : void
 		{
+			node.state.reset();
 			container.addChild(node.state.view);
 		}
 		
@@ -44,15 +49,14 @@ package ectoplasm.systems.states
 								
 			node.state.timeRemaining-=time;
 			
-			var r : Number = (node.state.timeRemaining/node.state.maxTime);
-			//game.game.setRenderBlurLevel(r);
-			
 			node.state.view.updateTime(node.state.timeRemaining);
+			node.state.view.updateScores(game.game.score,scores.highscore);
 			
 			if(node.state.timeRemaining<0)
 			{
 				// Make the player controllable now
 				ghost.entity.add(new Controllable());
+				ghost.entity.add(new Collideable());
 				game.game.states.changeState(GameStates.PLAYING);
 			}
 		}

@@ -30,8 +30,8 @@ package
 				st.antiAliasing = 0;
 				st.stage.stageWidth  = isPad?1024:960;
 				st.stage.stageHeight = isPad?768:640;
-				st.simulateMultitouch = true;
-				st.showStats = true;
+				//st.simulateMultitouch = true;
+				//st.showStats = true;
 				st.start();
 			}
 		}

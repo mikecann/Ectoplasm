@@ -223,23 +223,26 @@
     <classEntry path="org.swiftsuspenders.utils.SsInternal"/>
     <classEntry path="org.swiftsuspenders.utils.TypeDescriptor"/>
     <classEntry path="ectoplasm.Ectoplasm"/>
-    <classEntry path="ectoplasm.common.Assets"/>
     <classEntry path="ectoplasm.common.DisplayDepths"/>
     <classEntry path="ectoplasm.common.EntityCreator"/>
     <classEntry path="ectoplasm.common.GameConfig"/>
     <classEntry path="ectoplasm.common.GameLoadingView"/>
     <classEntry path="ectoplasm.common.GameStates"/>
+    <classEntry path="ectoplasm.common.Highscores"/>
     <classEntry path="ectoplasm.common.PreGameDisplayComponentProvider"/>
     <classEntry path="ectoplasm.common.SystemDisplayLayers"/>
     <classEntry path="ectoplasm.common.SystemPriorities"/>
     <classEntry path="ectoplasm.components.game.Background"/>
     <classEntry path="ectoplasm.components.game.Camera"/>
+    <classEntry path="ectoplasm.components.game.Collideable"/>
     <classEntry path="ectoplasm.components.game.Controllable"/>
+    <classEntry path="ectoplasm.components.game.DeathThroes"/>
     <classEntry path="ectoplasm.components.game.Display"/>
     <classEntry path="ectoplasm.components.game.Game"/>
     <classEntry path="ectoplasm.components.game.Ghost"/>
     <classEntry path="ectoplasm.components.game.ImageDisplay"/>
     <classEntry path="ectoplasm.components.game.Invulnerable"/>
+    <classEntry path="ectoplasm.components.game.Microphone"/>
     <classEntry path="ectoplasm.components.game.Obstacle"/>
     <classEntry path="ectoplasm.components.game.Particle"/>
     <classEntry path="ectoplasm.components.game.Position"/>
@@ -259,6 +262,8 @@
     <classEntry path="ectoplasm.nodes.game.GhostMovementNode"/>
     <classEntry path="ectoplasm.nodes.game.GhostNode"/>
     <classEntry path="ectoplasm.nodes.game.ImageRenderNode"/>
+    <classEntry path="ectoplasm.nodes.game.MicrophoneButtonNode"/>
+    <classEntry path="ectoplasm.nodes.game.MicrophoneNode"/>
     <classEntry path="ectoplasm.nodes.game.ObstacleNode"/>
     <classEntry path="ectoplasm.nodes.game.ParticleNode"/>
     <classEntry path="ectoplasm.nodes.game.RenderNode"/>
@@ -273,11 +278,12 @@
     <classEntry path="ectoplasm.systems.game.GhostCollisionSystem"/>
     <classEntry path="ectoplasm.systems.game.GhostFollowingCameraSystem"/>
     <classEntry path="ectoplasm.systems.game.GhostMovementSystem"/>
-    <classEntry path="ectoplasm.systems.game.MicrophoneBasedControlSystem"/>
+    <classEntry path="ectoplasm.systems.game.GhostTouchControlsSystem"/>
+    <classEntry path="ectoplasm.systems.game.MicrophoneSystem"/>
+    <classEntry path="ectoplasm.systems.game.MicrophoneToggleButtonSystem"/>
     <classEntry path="ectoplasm.systems.game.ObstacleSystem"/>
     <classEntry path="ectoplasm.systems.game.ParticleTrailSystem"/>
     <classEntry path="ectoplasm.systems.game.RenderSystem"/>
-    <classEntry path="ectoplasm.systems.game.TouchBasedControlsSystem"/>
     <classEntry path="ectoplasm.systems.states.CountdownGameStartStateSystem"/>
     <classEntry path="ectoplasm.systems.states.PlayingGameStateSystem"/>
     <classEntry path="ectoplasm.systems.states.PostGameStateSystem"/>
@@ -309,10 +315,12 @@
     <classEntry path="ectoplasm.utils.url.URLParser"/>
     <classEntry path="ectoplasm.views.CountdownGameStartView"/>
     <classEntry path="ectoplasm.views.GhostView"/>
+    <classEntry path="ectoplasm.views.MicrophoneButtonView"/>
     <classEntry path="ectoplasm.views.ObstacleView"/>
     <classEntry path="ectoplasm.views.PlayingGameView"/>
     <classEntry path="ectoplasm.views.PostGameView"/>
     <classEntry path="ectoplasm.views.PreGameView"/>
+    <classEntry path="ectoplasm.views.ScoreView"/>
     <classEntry path="feathers.themes.MetalWorksMobileTheme"/>
   </includeClasses>
   <includeResources/>

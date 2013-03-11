@@ -23,17 +23,15 @@ package
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			
-			MetalWorksMobileTheme.globalScale = 1.3;
+			//MetalWorksMobileTheme.globalScale = 1.3;
 			
-			Starling.multitouchEnabled = true;
+			//Starling.multitouchEnabled = true;
 			Starling.handleLostContext = true;						
 			
-			var st : Starling = new Starling(Ectoplasm, stage, new Rectangle(0,0,1024,768) );
+			var st : Starling = new Starling(Ectoplasm, stage, new Rectangle(0,0,stage.stageWidth,stage.stageHeight) );
 			st.antiAliasing = 0;
-			st.stage.stageWidth  = 1024;
-			st.stage.stageHeight = 768;
-			st.simulateMultitouch = true;
-			st.showStats = true;
+			//st.simulateMultitouch = true;
+			//st.showStats = true;
 			st.start();
 		}
 	}

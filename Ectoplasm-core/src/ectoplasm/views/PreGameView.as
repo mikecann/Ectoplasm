@@ -16,6 +16,9 @@ package ectoplasm.views
 		public var startGameTriggered : Boolean;
 		
 		private var startBtn:Button;
+		private var qmarkBtn:Button;
+		private var tutorialPage : Image;
+		
 		private var titleImage:Image;
 			
 		public function PreGameView(assets : AssetManager, config:GameConfig)
@@ -25,13 +28,35 @@ package ectoplasm.views
 			startBtn.y = 50+config.halfHeight-startBtn.height/2;
 			addChild(startBtn);
 			
+			qmarkBtn = new Button(assets.getTexture("helpicon"));
+			qmarkBtn.x = config.width-qmarkBtn.width-20;
+			qmarkBtn.y = config.height-qmarkBtn.height-20;
+			addChild(qmarkBtn);
+			
 			titleImage = new Image(assets.getTexture("ectoplasm_stamp"));
 			titleImage.filter = BlurFilter.createDropShadow();
 			titleImage.x = 20+ config.halfWidth-titleImage.width/2;
 			titleImage.y = 200;
 			addChild(titleImage);
 			
-			addEventListener(TouchEvent.TOUCH,onStartTouched);	
+			tutorialPage = new Image(assets.getTexture("tutorial"));
+			tutorialPage.x = config.halfWidth-tutorialPage.width/2;
+			tutorialPage.y = config.halfHeight-tutorialPage.height/2;
+			tutorialPage.visible = false;
+			addChild(tutorialPage);
+			
+			startBtn.addEventListener(TouchEvent.TOUCH,onStartTouched);
+			qmarkBtn.addEventListener(TouchEvent.TOUCH,onQMarkTouched);	
+		}
+		
+		private function onQMarkTouched(e:TouchEvent):void
+		{
+			var t : Touch = e.getTouch(this,TouchPhase.ENDED);
+			if(t) {
+				tutorialPage.visible = !tutorialPage.visible;
+				startBtn.visible = !startBtn.visible;
+				titleImage.visible = !titleImage.visible;
+			}
 		}
 		
 		private function onStartTouched(e:TouchEvent):void

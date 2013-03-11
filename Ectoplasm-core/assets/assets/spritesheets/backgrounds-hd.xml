@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:0644338c0c22054650ab6ebed5257cb5$ -->
+<TextureAtlas imagePath="backgrounds-hd.png">
+    <SubTexture name="bg_tile_blood" x="1604" y="2" width="228" height="1536"/>
+    <SubTexture name="bg_tile_get_out" x="688" y="2" width="684" height="1536"/>
+    <SubTexture name="bg_tile_ghost_family" x="2" y="2" width="684" height="1536"/>
+    <SubTexture name="bg_tile_ghost_portrait1" x="1374" y="2" width="228" height="1536"/>
+</TextureAtlas>

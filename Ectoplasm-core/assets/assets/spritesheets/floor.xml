@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:61a5392e16ad391d1c7b7e0febc080e8$ -->
+<TextureAtlas imagePath="floor.png">
+    <SubTexture name="basic_floor_tile1" x="606" y="812" width="300" height="157" frameX="0" frameY="-216" frameWidth="300" frameHeight="373"/>
+    <SubTexture name="basic_floor_tile2" x="304" y="814" width="300" height="157" frameX="0" frameY="-216" frameWidth="300" frameHeight="373"/>
+    <SubTexture name="basic_floor_tile3" x="304" y="655" width="300" height="157" frameX="0" frameY="-216" frameWidth="300" frameHeight="373"/>
+    <SubTexture name="basic_floor_tile4" x="606" y="653" width="300" height="157" frameX="0" frameY="-216" frameWidth="300" frameHeight="373"/>
+    <SubTexture name="basic_floor_tile5" x="304" y="482" width="300" height="171" frameX="0" frameY="-202" frameWidth="300" frameHeight="373"/>
+    <SubTexture name="basic_floor_tile6" x="606" y="494" width="300" height="157" frameX="0" frameY="-216" frameWidth="300" frameHeight="373"/>
+    <SubTexture name="obstacle_floor_tile1" x="2" y="377" width="300" height="295" frameX="0" frameY="-78" frameWidth="300" frameHeight="373"/>
+    <SubTexture name="obstacle_floor_tile3" x="2" y="2" width="300" height="373"/>
+    <SubTexture name="obstacle_floor_tile4" x="2" y="674" width="300" height="283" frameX="0" frameY="-90" frameWidth="300" frameHeight="373"/>
+    <SubTexture name="obstacle_floor_tile5" x="606" y="2" width="300" height="251" frameX="0" frameY="-122" frameWidth="300" frameHeight="373"/>
+    <SubTexture name="obstacle_floor_tile6" x="606" y="255" width="300" height="237" frameX="0" frameY="-136" frameWidth="300" frameHeight="373"/>
+    <SubTexture name="obstacle_floor_tile7" x="304" y="2" width="300" height="257" frameX="0" frameY="-116" frameWidth="300" frameHeight="373"/>
+    <SubTexture name="obstacle_floor_tile8" x="304" y="261" width="300" height="219" frameX="0" frameY="-154" frameWidth="300" frameHeight="373"/>
+</TextureAtlas>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:0732b0f51d968790757c0920e2379b76$ -->
+<TextureAtlas imagePath="menus.png">
+    <SubTexture name="again_up" x="672" y="485" width="190" height="77"/>
+    <SubTexture name="ectoplasm_stamp" x="480" y="346" width="463" height="137"/>
+    <SubTexture name="helpicon" x="864" y="485" width="119" height="105"/>
+    <SubTexture name="large_o" x="945" y="2" width="24" height="28"/>
+    <SubTexture name="microphone_disabled" x="103" y="832" width="99" height="78" frameX="0" frameY="0" frameWidth="99" frameHeight="80"/>
+    <SubTexture name="microphone_enabled" x="103" y="752" width="99" height="78" frameX="0" frameY="0" frameWidth="99" frameHeight="80"/>
+    <SubTexture name="score_tab" x="2" y="346" width="476" height="138"/>
+    <SubTexture name="small_o" x="971" y="2" width="14" height="15"/>
+    <SubTexture name="start_up" x="480" y="485" width="190" height="77"/>
+    <SubTexture name="tutorial" x="2" y="2" width="941" height="342" frameX="0" frameY="0" frameWidth="941" frameHeight="344"/>
+    <SubTexture name="volume_00" x="103" y="672" width="99" height="78"/>
+    <SubTexture name="volume_01" x="103" y="592" width="99" height="78"/>
+    <SubTexture name="volume_02" x="305" y="486" width="99" height="78"/>
+    <SubTexture name="volume_03" x="204" y="486" width="99" height="78"/>
+    <SubTexture name="volume_04" x="103" y="486" width="99" height="78"/>
+    <SubTexture name="volume_05" x="2" y="912" width="99" height="78"/>
+    <SubTexture name="volume_06" x="2" y="832" width="99" height="78"/>
+    <SubTexture name="volume_07" x="2" y="752" width="99" height="78"/>
+    <SubTexture name="volume_08" x="2" y="672" width="99" height="78"/>
+    <SubTexture name="volume_09" x="2" y="486" width="99" height="78"/>
+    <SubTexture name="volume_10" x="2" y="592" width="99" height="78"/>
+</TextureAtlas>

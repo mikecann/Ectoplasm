@@ -73,12 +73,12 @@ package ectoplasm.systems.game
 		private function updateObstacles(node:ObstacleNode, isNorth:Boolean, obstacleWaveValue:Number, cam:CameraNode) : void
 		{
 			var x : int = -config.width;
-			if(node) x = node.position.position.x + node.display.container.width;
+			if(node) x = node.position.position.x + node.display.container.width - Rand.integer(3,5);
 			
 			while(x-cam.position.position.x<config.width)
 			{
 				var e : Entity = createNewObstacle(x,isNorth,obstacleWaveValue);
-				x += Display(e.get(Display)).container.width-1;
+				x += Display(e.get(Display)).container.width;
 			}			
 		}
 		
@@ -100,7 +100,7 @@ package ectoplasm.systems.game
 				//var lastOther : Obstacle = otherObs[otherObs.length-1].get(Obstacle);
 				//var otherIsObs : Boolean = ObstacleTypes.isObstacle(lastOther.type);
 				//if(!otherIsObs) type = Rand.boolean()?basicType:randomObstacleType;
-				type = Rand.boolean()?basicType:randomObstacleType;
+				type = Rand.random()>0.3?basicType:randomObstacleType;
 			}
 						
 			var tex : Texture = assets.getTexture(type.name);

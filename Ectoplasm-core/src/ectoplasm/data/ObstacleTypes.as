@@ -4,31 +4,37 @@ package ectoplasm.data
 
 	public class ObstacleTypes
 	{
-		public static const BASIC_CEILING_1 : ObstacleTypeVO = new ObstacleTypeVO("basic_ceiling_tile");
-		public static const BASIC_CEILING_2 : ObstacleTypeVO = new ObstacleTypeVO("basic_ceiling_tile2");
-		public static const BASIC_CEILING_3 : ObstacleTypeVO = new ObstacleTypeVO("basic_ceiling_tile3");
-		public static const BASIC_CEILING_4 : ObstacleTypeVO = new ObstacleTypeVO("basic_ceiling_tile4");
+		public static var _ceilings : Vector.<ObstacleTypeVO> ;
+		public static function get ceilings() : Vector.<ObstacleTypeVO> 
+		{
+			return _ceilings ||= genList(1,10,"obstacle_ceiling_tile");
+		}
 		
-		public static const BASIC_FLOOR_1 : ObstacleTypeVO = new ObstacleTypeVO("basic_floor_tile");
-		public static const BASIC_FLOOR_2 : ObstacleTypeVO = new ObstacleTypeVO("basic_floor_tile2");
-		public static const BASIC_FLOOR_3 : ObstacleTypeVO = new ObstacleTypeVO("basic_floor_tile3");
-		public static const BASIC_FLOOR_4 : ObstacleTypeVO = new ObstacleTypeVO("basic_floor_tile4");
+		public static var _floors : Vector.<ObstacleTypeVO> ;
+		public static function get floors() : Vector.<ObstacleTypeVO> 
+		{
+			return _floors ||= genList(1,9,"obstacle_floor_tile");
+		}
 		
-		public static const OBSTACLE_CEILING_1 : ObstacleTypeVO = new ObstacleTypeVO("obstacle_ceiling_tile1");
-		public static const OBSTACLE_CEILING_2 : ObstacleTypeVO = new ObstacleTypeVO("obstacle_ceiling_tile2");
-		public static const OBSTACLE_CEILING_3 : ObstacleTypeVO = new ObstacleTypeVO("obstacle_ceiling_tile3");
-		public static const OBSTACLE_CEILING_4 : ObstacleTypeVO = new ObstacleTypeVO("obstacle_ceiling_tile4");				
+		public static var _basic_ceilings : Vector.<ObstacleTypeVO> ;
+		public static function get basic_ceilings() : Vector.<ObstacleTypeVO> 
+		{
+			return _basic_ceilings ||= genList(1,9,"basic_ceiling_tile");
+		}
 		
-		public static const OBSTACLE_FLOOR_1 : ObstacleTypeVO = new ObstacleTypeVO("obstacle_floor_tile1");
-		public static const OBSTACLE_FLOOR_2 : ObstacleTypeVO = new ObstacleTypeVO("obstacle_floor_tile2");
-		public static const OBSTACLE_FLOOR_3 : ObstacleTypeVO = new ObstacleTypeVO("obstacle_floor_tile3");
-		public static const OBSTACLE_FLOOR_4 : ObstacleTypeVO = new ObstacleTypeVO("obstacle_floor_tile4");
-				
-		public static var ceilings : Vector.<ObstacleTypeVO> = Vector.<ObstacleTypeVO>([OBSTACLE_CEILING_1,OBSTACLE_CEILING_2,OBSTACLE_CEILING_3,OBSTACLE_CEILING_4]);
-		public static var basic_ceilings : Vector.<ObstacleTypeVO> = Vector.<ObstacleTypeVO>([BASIC_CEILING_1,BASIC_CEILING_2,BASIC_CEILING_3,BASIC_CEILING_4]);
-		public static var basic_floors : Vector.<ObstacleTypeVO> = Vector.<ObstacleTypeVO>([BASIC_FLOOR_1,BASIC_FLOOR_2,BASIC_FLOOR_3,BASIC_FLOOR_4]);
-		public static var floors : Vector.<ObstacleTypeVO> = Vector.<ObstacleTypeVO>([OBSTACLE_FLOOR_1,OBSTACLE_FLOOR_2,OBSTACLE_FLOOR_3,OBSTACLE_FLOOR_4]);
-				
+		public static var _basic_floors : Vector.<ObstacleTypeVO> ;
+		public static function get basic_floors() : Vector.<ObstacleTypeVO> 
+		{
+			return _basic_floors ||= genList(1,9,"basic_floor_tile");
+		}
+		
+		private static function genList(fromI:int,toI:int,prefix:String) : Vector.<ObstacleTypeVO>
+		{
+			var v : Vector.<ObstacleTypeVO> = new Vector.<ObstacleTypeVO>();
+			for (var i:int=fromI; i<toI; i++) v.push(new ObstacleTypeVO(prefix+i));
+			return v;
+		}
+		
 		public static function getRandomCeiling():ObstacleTypeVO
 		{
 			return ceilings[Rand.integer(0,ceilings.length)];

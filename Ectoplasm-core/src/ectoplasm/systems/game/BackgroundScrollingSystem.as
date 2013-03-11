@@ -7,6 +7,7 @@ package ectoplasm.systems.game
 	import ectoplasm.common.GameConfig;
 	import ectoplasm.nodes.game.BackgroundNode;
 	import ectoplasm.nodes.game.CameraNode;
+	import ectoplasm.utils.math.Rand;
 	
 	import starling.display.DisplayObject;
 	import starling.display.Image;
@@ -20,6 +21,9 @@ package ectoplasm.systems.game
 		
 		private var backgrounds : NodeList;
 		private var cameras : NodeList;
+		
+		private static const ALT_BGS : Array = ["bg_tile_blood","bg_tile_ghost_family","bg_tile_ghost_portrait1","bg_tile_ghost_portrait2"];
+		private var timeSinceLastAltBG : Number=0;
 		
 		override public function addToEngine( engine : Engine ) : void
 		{
@@ -40,10 +44,14 @@ package ectoplasm.systems.game
 					x = last.x + last.width-1;
 				}
 				
+				timeSinceLastAltBG+=time;
+				
 				var tex : Texture = assetsMan.getTexture("bg_tile_plain");
 				while(x-cam.position.position.x*bg.position.position.z<config.width)
 				{
-					tex = assetsMan.getTexture(Math.random()>0.8?"bg_tile_blood":"bg_tile_plain");
+					var nextIsAlt : Boolean = Math.random()>1-(timeSinceLastAltBG/10);
+					if(nextIsAlt) timeSinceLastAltBG = 0;					
+					tex = assetsMan.getTexture(nextIsAlt?ALT_BGS[Rand.integer(0,ALT_BGS.length)]:"bg_tile_plain");
 					var img : Image = new Image(tex);
 					img.x = x;
 					bg.display.container.addChild(img);
@@ -53,12 +61,14 @@ package ectoplasm.systems.game
 				for (var i:int=0; i<bg.display.container.numChildren; i++)
 				{
 					var child : DisplayObject = bg.display.container.getChildAt(i);
-					if(child.x-cam.position.position.x*bg.position.position.z+tex.width<-config.width)
+					if(child.x-cam.position.position.x*bg.position.position.z+child.width<0)
 					{
 						bg.display.container.removeChildAt(i);
 						i--;
 					}
 				}
+				
+				
 			}
 		}	
 	}

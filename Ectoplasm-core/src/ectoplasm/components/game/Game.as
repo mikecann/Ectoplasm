@@ -8,6 +8,7 @@ package ectoplasm.components.game
 	{		
 		public var states : EntityStateMachine;
 		public var score : int;
+		public var inputForce : Number;
 		
 		public function Game(states:EntityStateMachine)
 		{

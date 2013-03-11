@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:7187b18733639f61f4a7f17515619854$ -->
+<TextureAtlas imagePath="floor-hd.png">
+    <SubTexture name="basic_floor_tile1" x="1206" y="1622" width="600" height="313" frameX="0" frameY="-432" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="basic_floor_tile2" x="604" y="1636" width="600" height="313" frameX="0" frameY="-432" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="basic_floor_tile3" x="604" y="1321" width="600" height="313" frameX="0" frameY="-432" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="basic_floor_tile4" x="1206" y="1307" width="600" height="313" frameX="0" frameY="-432" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="basic_floor_tile5" x="604" y="980" width="600" height="339" frameX="0" frameY="-406" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="basic_floor_tile6" x="1206" y="992" width="600" height="313" frameX="0" frameY="-432" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_floor_tile1" x="2" y="749" width="600" height="589" frameX="0" frameY="-156" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_floor_tile3" x="2" y="2" width="600" height="745"/>
+    <SubTexture name="obstacle_floor_tile4" x="2" y="1340" width="600" height="565" frameX="0" frameY="-180" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_floor_tile5" x="1206" y="2" width="600" height="501" frameX="0" frameY="-244" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_floor_tile6" x="1206" y="505" width="600" height="485" frameX="0" frameY="-260" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_floor_tile7" x="604" y="2" width="600" height="537" frameX="0" frameY="-208" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_floor_tile8" x="604" y="541" width="600" height="437" frameX="0" frameY="-308" frameWidth="600" frameHeight="745"/>
+</TextureAtlas>

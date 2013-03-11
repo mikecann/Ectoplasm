@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:72e485cad7ede09fde9a5d962683a3f1$ -->
+<TextureAtlas imagePath="tiles2-hd.png">
+    <SubTexture name="basic_ceiling_tile6" x="604" y="317" width="600" height="333" frameX="0" frameY="0" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="basic_ceiling_tile7" x="2" y="317" width="600" height="333" frameX="0" frameY="0" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="basic_ceiling_tile8" x="1206" y="2" width="600" height="333" frameX="0" frameY="0" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="basic_floor_tile7" x="604" y="2" width="600" height="313" frameX="0" frameY="-432" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="basic_floor_tile8" x="2" y="2" width="600" height="313" frameX="0" frameY="-432" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_ceiling_tile5" x="2" y="1091" width="600" height="605" frameX="0" frameY="0" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_ceiling_tile6" x="1206" y="742" width="600" height="571" frameX="0" frameY="0" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_ceiling_tile7" x="2" y="652" width="600" height="437" frameX="0" frameY="0" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_ceiling_tile8" x="604" y="652" width="600" height="507" frameX="0" frameY="0" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_ceiling_tile9" x="1206" y="337" width="600" height="403" frameX="0" frameY="0" frameWidth="600" frameHeight="745"/>
+    <SubTexture name="obstacle_floor_tile2" x="604" y="1315" width="900" height="715" frameX="0" frameY="-30" frameWidth="900" frameHeight="745"/>
+</TextureAtlas>

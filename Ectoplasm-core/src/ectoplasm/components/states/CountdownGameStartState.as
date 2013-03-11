@@ -14,5 +14,10 @@ package ectoplasm.components.states
 			this.view = view;
 			this.timeRemaining = maxTime;
 		}
+		
+		public function reset():void
+		{
+			timeRemaining = maxTime;
+		}
 	}
 }

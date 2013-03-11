@@ -7,6 +7,7 @@
       <compilerSourcePathEntry kind="1" linkType="1" path="${Feathers}"/>
       <compilerSourcePathEntry kind="1" linkType="1" path="${Starling}"/>
       <compilerSourcePathEntry kind="1" linkType="1" path="assets"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="${BulkLoader}"/>
     </compilerSourcePath>
     <libraryPath defaultLinkType="0">
       <libraryPathEntry kind="4" path="">

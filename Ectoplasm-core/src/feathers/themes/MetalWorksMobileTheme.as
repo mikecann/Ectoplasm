@@ -85,10 +85,10 @@ package feathers.themes
 
 	public class MetalWorksMobileTheme extends DisplayListWatcher
 	{
-		[Embed(source="/assets/images/metalworks.png")]
+		[Embed(source="/assets/spritesheets/metalworks.png")]
 		protected static const ATLAS_IMAGE:Class;
 
-		[Embed(source="/assets/images/metalworks.xml",mimeType="application/octet-stream")]
+		[Embed(source="/assets/spritesheets/metalworks.xml",mimeType="application/octet-stream")]
 		protected static const ATLAS_XML:Class;
 		
 		public static var globalScale : Number = 1;

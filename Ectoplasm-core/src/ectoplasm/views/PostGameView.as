@@ -21,7 +21,10 @@ package ectoplasm.views
 		
 		private var againButton:Button;
 		private var titleImage:Image;
-		private var scoreTF :TextField;
+		private var currentScore : ScoreView;
+		private var highScore : ScoreView;
+		private var qmarkBtn:Button;
+		private var tutorialPage : Image;
 			
 		public function PostGameView(assets : AssetManager, config:GameConfig)
 		{
@@ -30,13 +33,30 @@ package ectoplasm.views
 			againButton.y = 50+config.halfHeight-againButton.height/2;
 			addChild(againButton);
 			
-			scoreTF = new TextField(600,200,"000000124","rabiohead", 130, 0xffffff);
-			scoreTF.hAlign = HAlign.LEFT;
-			scoreTF.vAlign = VAlign.TOP;
-			scoreTF.filter = BlurFilter.createDropShadow();
-			scoreTF.x = config.width-scoreTF.width+180;
-			scoreTF.y = -10;
-			addChild(scoreTF);
+			var s : Sprite = new Sprite();				
+			
+			currentScore = new ScoreView(assets,config);
+			currentScore.y = 21;
+			s.addChild(currentScore);	
+			
+			highScore = new ScoreView(assets,config);
+			highScore.scaleX = highScore.scaleY = 0.5;
+			highScore.x = 230;			
+			s.addChild(highScore);	
+			
+			s.x = config.width-s.width+180;
+			addChild(s);
+			
+			qmarkBtn = new Button(assets.getTexture("helpicon"));
+			qmarkBtn.x = config.width-qmarkBtn.width-20;
+			qmarkBtn.y = config.height-qmarkBtn.height-20;
+			addChild(qmarkBtn);			
+					
+			tutorialPage = new Image(assets.getTexture("tutorial"));
+			tutorialPage.x = config.halfWidth-tutorialPage.width/2;
+			tutorialPage.y = config.halfHeight-tutorialPage.height/2;
+			tutorialPage.visible = false;
+			addChild(tutorialPage);
 			
 			titleImage = new Image(assets.getTexture("ectoplasm_stamp"));
 			titleImage.filter = BlurFilter.createDropShadow();
@@ -44,7 +64,18 @@ package ectoplasm.views
 			titleImage.y = 200;
 			addChild(titleImage);
 			
-			addEventListener(TouchEvent.TOUCH,onAgainTouched);	
+			againButton.addEventListener(TouchEvent.TOUCH,onAgainTouched);
+			qmarkBtn.addEventListener(TouchEvent.TOUCH,onQMarkTouched);	
+		}
+		
+		private function onQMarkTouched(e:TouchEvent):void
+		{
+			var t : Touch = e.getTouch(this,TouchPhase.ENDED);
+			if(t) {
+				tutorialPage.visible = !tutorialPage.visible;
+				againButton.visible = !againButton.visible;
+				titleImage.visible = !titleImage.visible;
+			}
 		}
 		
 		private function onAgainTouched(e:TouchEvent):void
@@ -53,9 +84,10 @@ package ectoplasm.views
 			if(t) againTriggered = true;				
 		}
 		
-		public function updateScore(score:Number) : void
+		public function updateScores(current:Number, high:Number) : void
 		{
-			scoreTF.text = StringUtils.padLeft(score+"","0",8);
+			currentScore.setScore(current);
+			highScore.setScore(high);
 		}
 	}
 }

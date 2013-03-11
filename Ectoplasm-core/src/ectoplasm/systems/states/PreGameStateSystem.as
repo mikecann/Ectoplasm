@@ -6,6 +6,7 @@ package ectoplasm.systems.states
 	import ectoplasm.common.EntityCreator;
 	import ectoplasm.common.GameConfig;
 	import ectoplasm.common.GameStates;
+	import ectoplasm.components.game.Microphone;
 	import ectoplasm.nodes.game.BackgroundNode;
 	import ectoplasm.nodes.game.CameraNode;
 	import ectoplasm.nodes.game.GameNode;
@@ -48,7 +49,7 @@ package ectoplasm.systems.states
 					
 			// Scroll the background to make things look pretty
 			cam.position.position.x += time * 30;
-						
+			
 			// Tap to start
 			if(node.state.view.startGameTriggered)
 			{
@@ -59,10 +60,12 @@ package ectoplasm.systems.states
 				
 				// When we create the ghost it isnt given the movement component
 				// so it cant be controlled by the player
-				creator.createGhost(0,config.halfHeight/2);				
+				creator.createGhost(0,config.halfHeight-100);				
 				cam.position.position.x = -config.cameraTrailingGhostDistance;				
 				
 				node.state.view.startGameTriggered = false;
+				config.renderLayerBlurAmount = 0;
+				
 				game.game.states.changeState(GameStates.COUNTDOWN);
 			}
 		}

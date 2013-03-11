@@ -5,33 +5,29 @@ package ectoplasm
 	import ash.integration.starling.StarlingFrameTickProvider;
 	import ash.integration.swiftsuspenders.SwiftSuspendersEngine;
 	
-	import ectoplasm.common.Assets;
 	import ectoplasm.common.EntityCreator;
 	import ectoplasm.common.GameConfig;
-	import ectoplasm.common.GameStates;
+	import ectoplasm.common.Highscores;
 	import ectoplasm.common.SystemDisplayLayers;
 	import ectoplasm.common.SystemPriorities;
+	import ectoplasm.nodes.game.MicrophoneButtonNode;
 	import ectoplasm.systems.game.AppLoadingSystem;
 	import ectoplasm.systems.game.BackgroundScrollingSystem;
 	import ectoplasm.systems.game.DebugMenuSystem;
-	import ectoplasm.systems.game.GameScoringSystem;
 	import ectoplasm.systems.game.GhostCollisionSystem;
 	import ectoplasm.systems.game.GhostFollowingCameraSystem;
 	import ectoplasm.systems.game.GhostMovementSystem;
-	import ectoplasm.systems.game.HUDSystem;
-	import ectoplasm.systems.game.MicrophoneBasedControlSystem;
+	import ectoplasm.systems.game.GhostTouchControlsSystem;
+	import ectoplasm.systems.game.MicrophoneSystem;
+	import ectoplasm.systems.game.MicrophoneToggleButtonSystem;
 	import ectoplasm.systems.game.ObstacleSystem;
 	import ectoplasm.systems.game.ParticleTrailSystem;
 	import ectoplasm.systems.game.RenderSystem;
-	import ectoplasm.systems.game.TouchBasedControlsSystem;
 	import ectoplasm.systems.states.CountdownGameStartStateSystem;
-	import ectoplasm.systems.states.LoadingStateSystem;
 	import ectoplasm.systems.states.PlayingGameStateSystem;
 	import ectoplasm.systems.states.PostGameStateSystem;
 	import ectoplasm.systems.states.PreGameStateSystem;
 	import ectoplasm.utils.input.KeyPoll;
-	
-	import feathers.themes.MetalWorksMobileTheme;
 	
 	import org.swiftsuspenders.Injector;
 	
@@ -69,6 +65,7 @@ package ectoplasm
 			injector = new Injector();	
 			injector.map( Injector ).toValue( injector ) ;
 			injector.map( Engine ).toValue(engine = new SwiftSuspendersEngine(injector));			
+			injector.map( Highscores ).toValue(new Highscores());			
 			injector.map( Stage ).toValue( Starling.current.stage );
 			injector.map( SystemDisplayLayers ).toValue( displayLayers = new SystemDisplayLayers(Starling.current.stage) );
 			injector.map( Starling ).toValue( Starling.current );
@@ -90,28 +87,18 @@ package ectoplasm
 			engine.addSystem(new PostGameStateSystem(displayLayers.hud),SystemPriorities.PRE_UPDATE);
 			
 			// Game systems
-			engine.addSystem(new DebugMenuSystem(displayLayers.debug),SystemPriorities.UPDATE);
-			engine.addSystem(new MicrophoneBasedControlSystem(),SystemPriorities.POST_UPDATE);
-			engine.addSystem(new TouchBasedControlsSystem(),SystemPriorities.UPDATE);
+			//engine.addSystem(new DebugMenuSystem(displayLayers.debug),SystemPriorities.UPDATE);
+			engine.addSystem(new MicrophoneSystem(),SystemPriorities.MIC_INPUT);
+			engine.addSystem(new GhostTouchControlsSystem(),SystemPriorities.TOUCH_INPUT);
 			engine.addSystem(new ObstacleSystem(),SystemPriorities.UPDATE);
 			engine.addSystem(new GhostFollowingCameraSystem(),SystemPriorities.UPDATE_CAMERA);
 			engine.addSystem(new GhostMovementSystem(),SystemPriorities.UPDATE);
 			engine.addSystem(new ParticleTrailSystem(),SystemPriorities.UPDATE);
 			engine.addSystem(new BackgroundScrollingSystem(),SystemPriorities.UPDATE);
-			//engine.addSystem(new HUDSystem(displayLayers.hud,displayLayers.render),SystemPriorities.UPDATE);
 			engine.addSystem(new GhostCollisionSystem(),SystemPriorities.RESOLVE_COLLISIONS);
 			engine.addSystem(new RenderSystem(displayLayers.render),SystemPriorities.RENDER);
+			engine.addSystem(new MicrophoneToggleButtonSystem(displayLayers.hud),SystemPriorities.UPDATE);
 			//engine.addSystem(new CameraTouchControlSystem(displayLayers.render),SystemPriorities.RENDER);
-		}
-		
-		/**
-		 * A little helper function
-		 */
-		private function addSystem(systemType:Class, priority:int) : void
-		{
-			var system : System = new systemType();
-			injector.injectInto(system);
-			engine.addSystem(system,priority);
 		}
 		
 		private function start() : void

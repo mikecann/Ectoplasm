@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:ff0f7e0a1b1e6da7109d2c64e4825882$ -->
+<TextureAtlas imagePath="objects.png">
+    <SubTexture name="ghost_dead_1" x="2" y="810" width="239" height="202" frameX="-146" frameY="-142" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_dead_2" x="521" y="346" width="293" height="310" frameX="-118" frameY="-78" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_dead_3" x="521" y="2" width="405" height="342" frameX="-58" frameY="-82" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_dead_4" x="2" y="2" width="517" height="414" frameX="-18" frameY="-14" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_large_1" x="243" y="810" width="191" height="186" frameX="-172" frameY="-155" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_large_2" x="816" y="618" width="197" height="190" frameX="-171" frameY="-151" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_large_3" x="296" y="418" width="213" height="182" frameX="-177" frameY="-144" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_large_4" x="436" y="810" width="241" height="168" frameX="-152" frameY="-148" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_large_5" x="296" y="418" width="213" height="182" frameX="-177" frameY="-144" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_large_6" x="816" y="618" width="197" height="190" frameX="-171" frameY="-151" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_medium_1" x="816" y="482" width="107" height="134" frameX="-216" frameY="-181" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_medium_2" x="816" y="346" width="107" height="134" frameX="-216" frameY="-181" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_medium_3" x="149" y="658" width="145" height="136" frameX="-198" frameY="-179" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_medium_4" x="421" y="658" width="161" height="130" frameX="-190" frameY="-179" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_medium_5" x="2" y="658" width="145" height="138" frameX="-197" frameY="-177" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_medium_6" x="296" y="658" width="123" height="136" frameX="-207" frameY="-182" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_small_1" x="928" y="130" width="83" height="126" frameX="-226" frameY="-188" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_small_2" x="928" y="2" width="85" height="126" frameX="-225" frameY="-187" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_small_3" x="928" y="258" width="81" height="120" frameX="-227" frameY="-188" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_small_4" x="925" y="380" width="97" height="114" frameX="-227" frameY="-189" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_small_5" x="928" y="258" width="81" height="120" frameX="-227" frameY="-188" frameWidth="535" frameHeight="428"/>
+    <SubTexture name="ghost_small_6" x="928" y="2" width="85" height="126" frameX="-225" frameY="-187" frameWidth="535" frameHeight="428"/>
+</TextureAtlas>
