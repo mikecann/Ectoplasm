@@ -1,5 +1,7 @@
 Description:
-Ectoplasm is lost and all alone in his big mansion. Help him try to get out, but be careful not to touch anything! Use your voice to make ghost noises into the microphone to control him ooOOOooooOOooooOOOOooo!
+Control a grumpy ghost by making the right noises! Ectoplasm is a game of moans; control Ecto the ghost by making the oooOOoooooOOoo noise all good ghosts make into your microphone! Be careful not to touch anything the -- more you haunt, the higher the score!
+
+This game was made in 24 hours as a part of Playdemic's Ship-it-day by Mike & Laura!
 
 Keywords:
 ghost, mansion, haunted, microphone, control, touch

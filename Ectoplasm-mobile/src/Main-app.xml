@@ -113,7 +113,7 @@
 		<!-- <requestedDisplayResolution></requestedDisplayResolution> -->
 		
 		<autoOrients>false</autoOrients>
-        <fullScreen>true</fullScreen>
+        <fullScreen>false</fullScreen>
         <visible>true</visible>
         <renderMode>direct</renderMode>
         
